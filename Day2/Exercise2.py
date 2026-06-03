@@ -1,0 +1,3 @@
+COMPANY_NAME = "ED Innovations"
+FOUNDING_YEAR = 2020
+GST_RATE = 0.18
