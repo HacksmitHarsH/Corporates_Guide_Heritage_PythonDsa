@@ -3,4 +3,4 @@ employees = [("Harsh Ashthana", 202601), ("Rishu Kumar", 202602), ("Aditya Raj",
 print(f"{'Name':<20} | {'ID':>6}")
 print("-" * 30)
 for name, eid in employees:
-    print(f"{name:<20} | {eid:06d}")
+    print(f"{name:<20} | {eid:06d}")    
