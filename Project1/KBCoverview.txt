@@ -1,0 +1,53 @@
+=========================================
+      KBC PYTHON QUIZ - PROGRAM FLOW
+=========================================
+
+1. INITIALIZATION
+   ├─ Import 'time' module.
+   ├─ Load 'questions' (List of dictionaries containing Qs, Options, Answers).
+   ├─ Load 'prizes' (List of prize money integers).
+   └─ Set initial variables: level = 0, money_won = 0, lifelines = False.
+
+2. MAIN GAME LOOP (Condition: level < 10)
+   │
+   ├─ Fetch current question and prize money based on 'level' index.
+   ├─ Display Question and Options to the user.
+   │
+   ├─ START TIMER
+   ├─ Wait for user input (A, B, C, D, 50, or SKIP).
+   ├─ STOP TIMER
+   │
+   ├─ TIME CHECK
+   │  ├─ IF time taken > 30 seconds: 
+   │  │  └─ Print "Time is up!" -> EXIT LOOP -> Go to GAME OVER.
+   │  └─ ELSE: Continue logic.
+   │
+   ├─ LIFELINE CHECK: 50-50
+   │  ├─ IF input is "50" AND 50-50 is unused:
+   │  │  ├─ Mark 50-50 as used.
+   │  │  ├─ Display the correct answer and exactly one wrong answer.
+   │  │  └─ Prompt for user input again.
+   │  └─ IF already used: Warn user, prompt again.
+   │
+   ├─ LIFELINE CHECK: SKIP
+   │  ├─ IF input is "SKIP" AND Skip is unused:
+   │  │  ├─ Mark Skip as used.
+   │  │  ├─ Increment 'level' to fetch the next question.
+   │  │  ├─ Display the new question and options.
+   │  │  └─ Prompt for user input again.
+   │  └─ IF already used: Warn user, prompt again.
+   │
+   └─ ANSWER EVALUATION
+      ├─ IF Answer is CORRECT:
+      │  ├─ Print "Correct Answer!".
+      │  ├─ Update 'money_won' to current prize money.
+      │  ├─ Increment 'level' by 1.
+      │  └─ RESTART LOOP (Go to Step 2).
+      │
+      └─ IF Answer is WRONG:
+         ├─ Print "Wrong Answer!" and display the correct answer.
+         └─ EXIT LOOP -> Go to GAME OVER.
+
+3. GAME OVER SEQUENCE
+   ├─ Print "GAME OVER".
+   └─ Print "Total money won: Rs. [money_won]".
