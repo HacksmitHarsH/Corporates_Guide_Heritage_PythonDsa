@@ -1,0 +1,9 @@
+       [A]          <- Level 0 (Start)
+      /   \
+    [B]   [C]       <- Level 1
+     |   
+    [D]             <- Level 2 (C also connects to D, but D is already visited by B)
+     |
+    [E]             <- Level 3
+     |
+    [F2]            <- Level 4
